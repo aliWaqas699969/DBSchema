@@ -21,15 +21,16 @@ const hero = () => {
           and more formats with just one click.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-          <button
-            onclick="scrollToConverter()"
-            className="bg-white text-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition duration-300"
-          >
-            <FontAwesomeIcon icon={faRocket} /> Start Converting
-          </button>
-          <button className=" cursor-pointer border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-purple-600 transform hover:scale-105 transition duration-300">
-            <FontAwesomeIcon icon={faRobot} /> Convert with AI
-          </button>
+          <a href="/convert">
+            <button className="cursor-pointer bg-white text-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition duration-300">
+              <FontAwesomeIcon icon={faRocket} /> Start Converting
+            </button>
+          </a>
+          <a href="/convertAI">
+            <button className=" cursor-pointer border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-purple-600 transform hover:scale-105 transition duration-300">
+              <FontAwesomeIcon icon={faRobot} /> Convert with AI
+            </button>
+          </a>
         </div>
 
         {/* <!-- Stats --> */}
@@ -39,7 +40,7 @@ const hero = () => {
               className="text-3xl font-bold text-white"
               id="conversions-count"
             >
-              0
+              210
             </div>
             <div className="text-gray-200">Conversions Made</div>
           </div>

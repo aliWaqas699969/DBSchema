@@ -1,19 +1,17 @@
-import Nav from "./components/nav";
-import Hero from "./components/hero";
-import SchemaConverter from "./components/schemaConverter";
-import FeaturesSection from "./components/featuresSection";
-import ExampleSection from "./components/exampleSection";
-import Footer from "./components/footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Convert from "./pages/Convert";
+import ConvertAI from "./pages/ConvertAI";
+
 function App() {
   return (
-    <>
-      <Nav />
-      <Hero />
-      <SchemaConverter />
-      <FeaturesSection />
-      <ExampleSection />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/convert" element={<Convert />} />
+        <Route path="/convertAI" element={<ConvertAI />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
