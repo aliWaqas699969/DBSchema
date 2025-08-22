@@ -1,128 +1,173 @@
-import React from "react";
+import { useState } from "react";
+// import { CheckCircleIcon, SparklesIcon } from "@heroicons/react/24/solid";
+import { CheckCircle, SparkleIcon } from "lucide-react";
 
-const schemaConverter = () => {
+export default function SchemaConverter() {
+  const [mode, setMode] = useState("rule");
+
+  const ruleFormats = [
+    "Prisma",
+    "Mongoose",
+    "Sequelize",
+    "TypeORM",
+    "GraphQL",
+    "JSON Schema",
+    "MySQL",
+    "Postgres",
+    "MongoDB",
+    "SQLite",
+  ];
+
+  const aiFormats = [
+    "Prisma",
+    "Mongoose",
+    "Sequelize",
+    "TypeORM",
+    "GraphQL",
+    "JSON Schema",
+    "MySQL",
+    "Postgres",
+    "MongoDB",
+    "SQLite",
+    "Supabase",
+    "Firestore",
+    "Hasura",
+    "Drizzle",
+    "Knex",
+    "Oracle",
+    "SQL Server",
+    "DynamoDB",
+    "Cassandra",
+    "Redis",
+    "OpenAPI",
+    "Avro",
+    "YAML",
+  ];
+
   return (
-    <div>
-      <section id="converter" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">
-              Schema Converter
-            </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-              Paste your schema in any supported format and get instant
-              conversion to multiple output formats.
+    <section
+      id="converter"
+      className="w-full py-20 bg-gradient-to-b from-white to-slate-50"
+    >
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        {/* Title */}
+        <h2 className="text-4xl font-bold mb-4">Schema Converter</h2>
+        <p className="text-slate-600 mb-10 max-w-2xl mx-auto">
+          Convert your database schemas into multiple formats instantly. Choose
+          between our fast{" "}
+          <span className="font-semibold">Rule-Based Converter</span>
+          or our powerful{" "}
+          <span className="font-semibold">AI-Powered Converter</span>.
+        </p>
+
+        {/* Tabs */}
+        <div className="flex justify-center mb-10">
+          <button
+            onClick={() => setMode("rule")}
+            className={`px-6 py-2 rounded-l-lg border transition cursor-pointer ${
+              mode === "rule"
+                ? "bg-purple-600 text-white border-purple-600"
+                : "bg-white text-slate-700 border-slate-300 hover:bg-slate-100"
+            }`}
+          >
+            ⚡ Rule-Based
+          </button>
+          <button
+            onClick={() => setMode("ai")}
+            className={`px-6 py-2 rounded-r-lg border transition cursor-pointer  ${
+              mode === "ai"
+                ? "bg-purple-600 text-white border-purple-600"
+                : "bg-white text-slate-700 border-slate-300 hover:bg-slate-100"
+            }`}
+          >
+            🤖 AI-Powered
+          </button>
+        </div>
+
+        {/* Side-by-side Visual */}
+        <div className="grid md:grid-cols-3 gap-6 items-center mb-12">
+          {/* Input */}
+          <div className="p-6 rounded-xl border bg-white shadow">
+            <h3 className="text-lg font-semibold mb-2">📥 Input Schema</h3>
+            <p className="text-slate-600 text-sm">
+              Paste your schema in any supported format.
             </p>
           </div>
 
-          {/* <!-- Format Selection --> */}
-          <div class="mb-8">
-            <div class="flex flex-wrap justify-center gap-4 mb-6">
-              <button
-                onclick="setInputFormat('auto')"
-                class="format-btn active bg-purple-600 text-white px-6 py-2 rounded-full"
-              >
-                <i class="fas fa-magic mr-2"></i>Auto Detect
-              </button>
-              <button
-                onclick="setInputFormat('prisma')"
-                class="format-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full"
-              >
-                <i class="fab fa-prisma mr-2"></i>Prisma
-              </button>
-              <button
-                onclick="setInputFormat('mongoose')"
-                class="format-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full"
-              >
-                <i class="fas fa-leaf mr-2"></i>Mongoose
-              </button>
-              <button
-                onclick="setInputFormat('sequelize')"
-                class="format-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full"
-              >
-                <i class="fas fa-database mr-2"></i>Sequelize
-              </button>
+          {/* Converter */}
+          <div className="p-6 rounded-xl border bg-white shadow relative">
+            <h3 className="text-lg font-semibold mb-2">
+              {mode === "rule" ? "⚡ Rule-Based Converter" : "🤖 AI Converter"}
+            </h3>
+            <p className="text-slate-600 text-sm mb-3">
+              {mode === "rule"
+                ? "Supports 10 popular formats with blazing fast conversion."
+                : "Unlock 20+ formats with intelligent AI-powered conversion."}
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {(mode === "rule" ? ruleFormats : aiFormats)
+                .slice(0, 6)
+                .map((f) => (
+                  <span
+                    key={f}
+                    className="px-3 py-1 text-sm rounded-full bg-purple-100 text-purple-700"
+                  >
+                    {f}
+                  </span>
+                ))}
+              {mode === "ai" && (
+                <span className="px-3 py-1 text-sm rounded-full bg-slate-200 text-slate-600">
+                  + more
+                </span>
+              )}
             </div>
           </div>
 
-          {/* <!-- Converter Interface --> */}
-          <div class="grid lg:grid-cols-2 gap-8">
-            {/* <!-- Input Editor --> */}
-            <div class="bg-gray-50 rounded-2xl p-6">
-              <div class="flex items-center justify-between mb-4">
-                <h3 class="text-xl font-semibold text-gray-900">
-                  Input Schema
-                </h3>
-                <div class="flex gap-2">
-                  <button
-                    onclick="loadExample()"
-                    class="text-sm bg-purple-100 text-purple-600 px-4 py-2 rounded-lg hover:bg-purple-200"
-                  >
-                    <i class="fas fa-file-code mr-1"></i>Load Example
-                  </button>
-                  <button
-                    onclick="clearInput()"
-                    class="text-sm bg-gray-200 text-gray-600 px-4 py-2 rounded-lg hover:bg-gray-300"
-                  >
-                    <i class="fas fa-trash mr-1"></i>Clear
-                  </button>
-                </div>
-              </div>
-              <div id="input-editor" class="code-editor"></div>
-              <div class="mt-4 flex items-center gap-4">
-                <span class="text-sm text-gray-500">Detected Format:</span>
-                <span
-                  id="detected-format"
-                  class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium"
-                >
-                  None
-                </span>
-              </div>
-            </div>
-
-            {/* <!-- Output Editor --> */}
-            <div class="bg-gray-50 rounded-2xl p-6">
-              <div class="flex items-center justify-between mb-4">
-                <h3 class="text-xl font-semibold text-gray-900">Output</h3>
-                <div class="flex gap-2">
-                  <select
-                    id="output-format"
-                    onchange="convertSchema()"
-                    class="text-sm bg-white border border-gray-300 rounded-lg px-3 py-2"
-                  >
-                    <option value="prisma">Prisma</option>
-                    <option value="mongoose">Mongoose</option>
-                    <option value="sequelize">Sequelize</option>
-                    <option value="typescript">TypeScript</option>
-                    <option value="zod">Zod Schema</option>
-                  </select>
-                  <button
-                    onclick="copyOutput()"
-                    class="text-sm bg-blue-100 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-200"
-                  >
-                    <i class="fas fa-copy mr-1"></i>Copy
-                  </button>
-                </div>
-              </div>
-              <div id="output-editor" class="code-editor"></div>
-              <div class="mt-4 flex items-center justify-between">
-                <div class="flex items-center gap-4">
-                  <span class="text-sm text-gray-500">Conversion Status:</span>
-                  <span
-                    id="conversion-status"
-                    class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
-                  >
-                    Ready
-                  </span>
-                </div>
-                <div id="conversion-stats" class="text-sm text-gray-500"></div>
-              </div>
-            </div>
+          {/* Output */}
+          <div className="p-6 rounded-xl border bg-white shadow">
+            <h3 className="text-lg font-semibold mb-2">📤 Output Schema</h3>
+            <p className="text-slate-600 text-sm">
+              Get your schema instantly in the format you choose.
+            </p>
           </div>
         </div>
-      </section>
-    </div>
-  );
-};
 
-export default schemaConverter;
+        {/* Feature List */}
+        <div className="grid md:grid-cols-2 gap-6 text-left">
+          <div className="p-6 rounded-xl border bg-white shadow">
+            <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-green-500" />
+              Rule-Based Converter
+            </h3>
+            <p className="text-slate-600 text-sm mb-3">
+              Built with deterministic parsing logic, ensuring fast and reliable
+              conversions across the 10 most common schema formats.
+            </p>
+            <ul className="grid grid-cols-2 gap-2 text-sm text-slate-700">
+              {ruleFormats.map((f) => (
+                <li key={f}>✅ {f}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="p-6 rounded-xl border bg-white shadow">
+            <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+              <SparkleIcon className="w-5 h-5 text-purple-500" />
+              AI-Powered Converter
+            </h3>
+            <p className="text-slate-600 text-sm mb-3">
+              Backed by advanced AI, supporting 20+ formats with flexibility for
+              evolving database ecosystems.
+            </p>
+            <ul className="grid grid-cols-2 gap-2 text-sm text-slate-700">
+              {aiFormats.slice(0, 10).map((f) => (
+                <li key={f}>✨ {f}</li>
+              ))}
+              <li>...and more</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

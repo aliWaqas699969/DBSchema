@@ -48,12 +48,11 @@ const exampleSection = () => {
                   </code>
                 </pre>
               </div>
-              <button
-                onclick="loadUserExample()"
-                className="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition"
-              >
-                Load Example
-              </button>
+              <a href="/convert">
+                <button className="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition cursor-pointer">
+                  Start Converting
+                </button>
+              </a>
             </div>
 
             <div className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition duration-300">
@@ -87,12 +86,11 @@ const exampleSection = () => {
                   </code>
                 </pre>
               </div>
-              <button
-                onclick="loadEcommerceExample()"
-                className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-              >
-                Load Example
-              </button>
+              <a href="/convert">
+                <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition cursor-pointer">
+                  Start Converting
+                </button>
+              </a>
             </div>
 
             <div className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition duration-300">
@@ -124,12 +122,11 @@ const exampleSection = () => {
                   </code>
                 </pre>
               </div>
-              <button
-                onclick="loadBlogExample()"
-                className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition"
-              >
-                Load Example
-              </button>
+              <a href="/convert">
+                <button className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition cursor-pointer ">
+                  Start Converting
+                </button>
+              </a>
             </div>
           </div>
         </div>

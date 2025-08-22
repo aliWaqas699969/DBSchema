@@ -1786,7 +1786,7 @@ from django.contrib.auth.models import User
       </div>
 
       {/* Format Selection */}
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-12xl mx-auto px-6 py-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
             <label className="block text-sm font-medium text-slate-300">
@@ -1851,7 +1851,7 @@ from django.contrib.auth.models import User
       )}
 
       {/* Editor Area */}
-      <div className="max-w-7xl mx-auto px-6 pb-6">
+      <div className="max-w-12xl mx-auto px-6 pb-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-280px)]">
           {/* Input Editor */}
           <div className="bg-slate-800 rounded-lg border border-slate-700 flex flex-col">
