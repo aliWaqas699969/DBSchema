@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Convert from "./pages/Convert";
 import ConvertAI from "./pages/ConvertAI";
-import ContactUs from "./pages/ContactUs";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/convert" element={<Convert />} />
         <Route path="/convertAI" element={<ConvertAI />} />
-        <Route path="/contactUs" element={<ContactUs />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );

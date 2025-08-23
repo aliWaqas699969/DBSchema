@@ -11,7 +11,7 @@ import {
 import { Github, Twitter, Linkedin } from "lucide-react";
 import React from "react";
 
-export default function ContactUs() {
+export default function Contact() {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(null);
