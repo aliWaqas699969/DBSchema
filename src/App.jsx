@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Convert from "./pages/Convert";
 import ConvertAI from "./pages/ConvertAI";
-import ContactUs from "./pages/contactUs";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
