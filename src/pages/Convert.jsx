@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightLeft } from "@fortawesome/free-solid-svg-icons";
-const SchemaConverter = () => {
+const Convert = () => {
   const [inputSchema, setInputSchema] = useState(`model User {
   id    String @id @default(uuid())
   email String @unique
@@ -1971,4 +1971,4 @@ from django.contrib.auth.models import User
   );
 };
 
-export default SchemaConverter;
+export default Convert;

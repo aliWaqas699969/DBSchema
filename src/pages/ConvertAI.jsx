@@ -45,7 +45,7 @@ const formats = {
   protobuf: { name: "Protobuf (.proto)" },
 };
 
-export default function AISchemaConverter() {
+export default function ConvertAI() {
   const [inputSchema, setInputSchema] = useState("");
   const [outputSchema, setOutputSchema] = useState("");
   const [inputFormat, setInputFormat] = useState("auto");
