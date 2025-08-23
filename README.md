@@ -36,11 +36,11 @@ Choose between **Rule-Based Conversion** (fast & deterministic) or **AI-Powered 
 
 ### 🔹 Schema Converter
 
-![Schema Converter](./screenshots/converter.png)
+![Schema Converter](./screenshots/convert.png)
 
 ### 🔹 AI Schema Converter
 
-![ AI Schema Converter](./screenshots/converterAI.png)
+![ AI Schema Converter](./screenshots/convertAI.png)
 
 ---
 
