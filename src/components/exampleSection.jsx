@@ -44,6 +44,7 @@ const exampleSection = () => {
   id    String @id
   email String @unique
   name  String?
+  category User[]
 }`}
                   </code>
                 </pre>

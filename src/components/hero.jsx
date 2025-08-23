@@ -45,7 +45,7 @@ const hero = () => {
             <div className="text-gray-200">Conversions Made</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-white">6+</div>
+            <div className="text-3xl font-bold text-white">10+</div>
             <div className="text-gray-200">Formats Supported</div>
           </div>
           <div className="text-center">

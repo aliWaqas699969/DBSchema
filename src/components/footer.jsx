@@ -1,11 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faDatabase,
-  faMedal,
-  faRightLeft,
-  faTape,
-} from "@fortawesome/free-solid-svg-icons";
+import { faRightLeft } from "@fortawesome/free-solid-svg-icons";
+import { Github } from "lucide-react";
 
 const footer = () => {
   return (
@@ -24,23 +20,12 @@ const footer = () => {
               </p>
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="https://github.com/aliWaqas699969/DBSchema"
                   className="bg-purple-600 p-3 rounded-full hover:bg-purple-700 transition"
                 >
-                  <FontAwesomeIcon icon={faMedal} />
+                  <Github />
                 </a>
-                <a
-                  href="#"
-                  className="bg-purple-600 p-3 rounded-full hover:bg-purple-700 transition"
-                >
-                  <FontAwesomeIcon icon={faTape} />
-                </a>
-                <a
-                  href="#"
-                  className="bg-purple-600 p-3 rounded-full hover:bg-purple-700 transition"
-                >
-                  <FontAwesomeIcon icon={faDatabase} />
-                </a>
+                <span className="text-2xl mt-2">Github</span>
               </div>
             </div>
             <div>
@@ -70,9 +55,9 @@ const footer = () => {
               </ul>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-4">Support</h4>
+              <h4 className="text-lg font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>
+                {/* <li>
                   <a
                     href="#"
                     className="hover:text-white transition hover:underline"
@@ -89,9 +74,12 @@ const footer = () => {
                   <a href="#" className="hover:text-white transition">
                     API Reference
                   </a>
-                </li>
+                </li> */}
                 <li>
-                  <a href="#" className="hover:text-white transition">
+                  <a
+                    href="/contactUs"
+                    className="hover:text-white transition hover:underline"
+                  >
                     Contact Us
                   </a>
                 </li>
